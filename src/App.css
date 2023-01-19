@@ -6,7 +6,9 @@ body {
 .App {
   display: flex;
   height: 100vh;
-  max-width: 1300px;
+  /* max-width: 81.25rem; */
+  /* height: 50rem; */
+  max-width: 81.25rem;
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px;

@@ -1,0 +1,22 @@
+.profile-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 12rem;
+    gap: .8rem;
+}
+
+.profile {
+    display: flex;
+    justify-content: end;
+    width: 13rem;
+    height: 4rem;
+    margin-left: 10rem;
+    margin-top: 4rem;
+}
+
+.profile:hover {
+    background-color: gainsboro;
+    border-radius: 1.875rem;
+    transition: color 100ms ease-out;
+}

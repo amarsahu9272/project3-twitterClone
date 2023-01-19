@@ -1,0 +1,18 @@
+.widgets__input {
+    display: flex;
+    align-items: center;
+    background-color: var(--twitter-background);
+    padding: .625rem;
+    border-radius: 1.25rem;
+    margin-top: .625rem;
+    margin-left: 1.25rem;
+}
+
+.widgets__input>input {
+    border: none;
+    background-color: var(--twitter-background);
+}
+
+.widgets__searchIcon {
+    color: gray;
+}

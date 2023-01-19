@@ -7,7 +7,7 @@ import FlipMove from "react-flip-move";
 
 function Feed() {
   //   const [post, setPosts] = useState([]);
-  let posts = JSON.parse(localStorage.getItem("tweet"));
+  let posts = JSON.parse(localStorage.getItem("tweet"))||[];
 
   return (
     <div className="feed">

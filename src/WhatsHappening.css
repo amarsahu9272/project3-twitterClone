@@ -1,0 +1,12 @@
+.widgets__widgetContainer {
+    margin-top: 0.938rem;
+    margin-left: 1.25rem;
+    padding: 1.25rem;
+    background-color: #f5f8fa;
+    border-radius: 1.25rem;
+}
+
+.widgets__widgetContainer>h2 {
+    font-size: 1.125rem;
+    font-weight: 800;
+}

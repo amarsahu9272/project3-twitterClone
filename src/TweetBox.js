@@ -1,9 +1,10 @@
-import { Avatar, Button } from "@mui/material";
+import { Avatar} from "@mui/material";
 import React, { useState } from "react";
 import "./TweetBox.css";
+import profileImge from "./Amr.jpg";
+import TwitterButton from "./TwitterButton";
 
 function TweetBox() {
-  // displayName: "", username: "", verified: "" ,text:"",image:"",avatar:""
   const [formValues, setFormValues] = useState({
     displayName: "",
     username: "",
@@ -17,16 +18,6 @@ function TweetBox() {
 
   const sendTweet = (e) => {
     e.preventDefault();
-
-    // db.collection("posts").add({
-    //   displayName: "Rafeh Qazi",
-    //   username: "cleverqazi",
-    //   verified: true,
-    //   text: tweetMessage,
-    //   image: tweetImage,
-    //   avatar:
-    //     "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-    // });
     setFormValues({
       ...formValues,
       displayName: "Rafeh Qazi",
@@ -37,19 +28,20 @@ function TweetBox() {
       avatar:
         "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
     });
-    // setTweetMessage("");
-    // setTweetImage("");
     let post = JSON.parse(localStorage.getItem("tweet")) || [];
     post.push(formValues);
     localStorage.setItem("tweet", JSON.stringify(post));
-    // setTweetMessage("");
-    // setTweetImage("");
+    setTweetMessage("");
+    setTweetImage("");
   };
   return (
     <div className="tweetBox">
       <form onSubmit={sendTweet}>
         <div className="tweetBox__input">
-          <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
+          <Avatar
+            src={profileImge}
+            // "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png"
+          />
           <input
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
@@ -64,14 +56,15 @@ function TweetBox() {
           placeholder="Optional: Enter image URL"
           type="text"
         />
-
-        <Button
+       
+        {/* <Button
           onClick={sendTweet}
           type="submit"
           className="tweetBox__tweetButton"
         >
           Tweet
-        </Button>
+        </Button> */}
+        <TwitterButton onClickAction={sendTweet}  variant='outlined' btnStyle='tweetBox__tweetButton'  />
       </form>
     </div>
   );

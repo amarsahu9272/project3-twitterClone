@@ -30,7 +30,7 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
             <p>{text}</p>
           </div>
         </div>
-        <img src={image} alt="" />
+        <img className="image" src={image} alt="" />
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />
