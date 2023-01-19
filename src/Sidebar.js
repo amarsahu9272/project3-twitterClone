@@ -38,7 +38,12 @@ function Sidebar() {
         />
       ))}
 
-      <TwitterButton onClickAction='' variant='outlined' btnStyle='sidebar__tweet'  />
+      <TwitterButton
+        onClickAction=""
+        btnText="Tweet"
+        variant="outlined"
+        btnStyle="sidebar__tweet"
+      />
       <ProfileButton />
     </div>
   );

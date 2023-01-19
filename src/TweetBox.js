@@ -1,4 +1,4 @@
-import { Avatar} from "@mui/material";
+import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./TweetBox.css";
 import profileImge from "./Amr.jpg";
@@ -56,7 +56,7 @@ function TweetBox() {
           placeholder="Optional: Enter image URL"
           type="text"
         />
-       
+
         {/* <Button
           onClick={sendTweet}
           type="submit"
@@ -64,7 +64,12 @@ function TweetBox() {
         >
           Tweet
         </Button> */}
-        <TwitterButton onClickAction={sendTweet}  variant='outlined' btnStyle='tweetBox__tweetButton'  />
+        <TwitterButton
+          onClickAction={sendTweet}
+          btnText="Tweet"
+          variant="outlined"
+          btnStyle="tweetBoxButton"
+        />
       </form>
     </div>
   );

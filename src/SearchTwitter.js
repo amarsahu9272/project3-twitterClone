@@ -5,8 +5,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 function SearchTwitter() {
   return (
-    <div className="widgets__input">
-        <SearchIcon className="widgets__searchIcon" />
+    <div className="searchTwitter">
+        <SearchIcon className="searchTwitterSearchIcon" />
         <input placeholder="Search Twitter" type="text" />
       </div>
   )

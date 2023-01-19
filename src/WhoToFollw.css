@@ -1,4 +1,4 @@
-.whatsHappeningContainer {
+.whoToFollwContainer {
     margin-top: 0.938rem;
     margin-left: 1.25rem;
     padding: 1.25rem;
@@ -9,20 +9,14 @@
     gap: .5rem;
 
 }
-
-.whatsHappeningContainer>h2 {
+.whoToFollwContainer>h2 {
     font-size: 1.125rem;
     font-weight: 800;
 }
 
-.trending {
-    display: flex;
-    justify-content: space-between;
-}
-
-.trends-p {
+.follow-p {
     margin-top: 2rem;
-    height: 50vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -30,7 +24,12 @@
     font-size: small;
     overflow: hidden;
 }
-a{
+.following {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
     text-decoration: none;
-    color:var(--twitter-color)   
+    color: var(--twitter-color)
 }

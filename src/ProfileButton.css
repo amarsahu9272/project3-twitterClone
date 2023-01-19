@@ -1,17 +1,10 @@
-.profile-btn {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    width: 12rem;
-    gap: .8rem;
-}
 
 .profile {
     display: flex;
-    justify-content: end;
-    width: 13rem;
+    justify-content: center;
+    width: 15rem;
     height: 4rem;
-    margin-left: 10rem;
+    margin-left: 2rem;
     margin-top: 4rem;
 }
 
@@ -19,4 +12,17 @@
     background-color: gainsboro;
     border-radius: 1.875rem;
     transition: color 100ms ease-out;
+}
+.profile-tag{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 12rem;
+    gap: 1.5rem;
+}
+.profile-btn{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 14rem;
 }

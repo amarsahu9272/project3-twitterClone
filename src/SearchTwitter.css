@@ -1,4 +1,4 @@
-.widgets__input {
+.searchTwitter {
     display: flex;
     align-items: center;
     background-color: var(--twitter-background);
@@ -6,13 +6,14 @@
     border-radius: 1.25rem;
     margin-top: .625rem;
     margin-left: 1.25rem;
+    position: sticky;
 }
 
-.widgets__input>input {
+.searchTwitter>input {
     border: none;
     background-color: var(--twitter-background);
 }
 
-.widgets__searchIcon {
+.searchTwitterSearchIcon {
     color: gray;
 }
