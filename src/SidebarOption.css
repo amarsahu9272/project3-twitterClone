@@ -5,9 +5,11 @@
 }
 
 .sidebarOption:hover {
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
+    
+    background-color: gainsboro;
     border-radius: 1.875rem;
-    color: var(--twitter-color);
+    /* color: var(--twitter-color); */
     transition: color 100ms ease-out;
 }
 

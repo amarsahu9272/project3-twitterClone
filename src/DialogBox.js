@@ -7,11 +7,12 @@ import {
   DialogTitle,
 } from "@mui/material";
 import React, { useState } from "react";
-import TweetBox from "./TweetBox";
 import "./DialogBox.css";
+import WhatsHappeningTweets from "./WhatsHappeningTweets";
+import TweetFooter from "./TweetFooter";
 
-function DialogBox() {
-  const [open, setOpen] = useState(false);
+function DialogBox({ values }) {
+  const [open, setOpen] = useState({ values });
   return (
     <>
       <Button onClick={() => setOpen(true)}>opendialog</Button>
@@ -19,9 +20,18 @@ function DialogBox() {
         className="dialog"
         open={open}
         onClose={() => setOpen(false)}
-        aria-aria-labelledby="dialog-title"
-        aria-describedby="dialog-description"
+        // aria-aria-labelledby="dialog-title"
+        // aria-describedby="dialog-description"
+        PaperProps={{
+          style: {
+            width: "80%",
+            height: "auto",
+          },
+        }}
+        // maxWidth="lg"
+
       >
+      
         <div className="dialogBox">
           {/* <DialogTitle id="dialog-title" className="dialogTitle">
           
@@ -31,10 +41,9 @@ function DialogBox() {
               id="dialog-description"
               className="dialogContent"
             >
-              {/* <div className="tweetboxDialog">
-                
-              </div> */}
-              <TweetBox/>
+              {/* <TweetBox/> */}
+              <WhatsHappeningTweets />
+              <TweetFooter />
             </DialogContentText>
           </DialogContent>
           <DialogActions>

@@ -1,9 +1,10 @@
-import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./TweetBox.css";
-import profileImge from "./Amr.jpg";
 // import TwitterButton from "./TwitterButton";
 import TweetFooter from "./TweetFooter";
+import ShowTweet from "./ShowTweet";
+import WhatsHappeningTweets from "./WhatsHappeningTweets";
+import profileImage from './Amr.jpg'
 
 function TweetBox() {
   const [formValues, setFormValues] = useState({
@@ -21,13 +22,12 @@ function TweetBox() {
     e.preventDefault();
     setFormValues({
       ...formValues,
-      displayName: "Rafeh Qazi",
-      username: "cleverqazi",
+      displayName: "Amar",
+      username: "Sahu",
       verified: true,
       text: tweetMessage,
       image: tweetImage,
-      avatar:
-        "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
+      avatar:profileImage
     });
     let post = JSON.parse(localStorage.getItem("tweet")) || [];
     post.push(formValues);
@@ -38,26 +38,6 @@ function TweetBox() {
   return (
     <div className="tweetBox">
       <form onSubmit={sendTweet}>
-        <div className="tweetBox__input">
-          <Avatar
-            src={profileImge}
-            // "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png"
-          />
-          <input
-            onChange={(e) => setTweetMessage(e.target.value)}
-            value={tweetMessage}
-            placeholder="What's happening?"
-            type="text"
-          />
-        </div>
-        {/* <input
-          value={tweetImage}
-          onChange={(e) => setTweetImage(e.target.value)}
-          className="tweetBox__imageInput"
-          placeholder="Optional: Enter image URL"
-          type="text"
-        /> */}
-
         {/* <Button
           onClick={sendTweet}
           type="submit"
@@ -65,13 +45,16 @@ function TweetBox() {
         >
           Tweet
         </Button> */}
-        {/* <TwitterButton
-          onClickAction={sendTweet}
-          btnText="Tweet"
-          variant="outlined"
-          btnStyle="tweetBoxButton"
-        /> */}
-        <TweetFooter handleClick={sendTweet}/>
+
+        <WhatsHappeningTweets
+          btnStyle="WhatsHappeningTweets"
+          values={tweetMessage}
+          handleChange={(e) => setTweetMessage(e.target.value)}
+          tweetImage={tweetImage}
+          handleTweetImage={(e) => setTweetImage(e.target.value)}
+        />
+        <TweetFooter  handleClick={sendTweet} />
+        <ShowTweet />
       </form>
     </div>
   );

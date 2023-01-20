@@ -34,3 +34,7 @@ a{
     text-decoration: none;
     color:var(--twitter-color)   
 }
+.trends-p>div:hover{
+    background-color: gainsboro;
+    cursor: pointer;
+}

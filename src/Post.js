@@ -1,41 +1,39 @@
 import React from "react";
 import "./Post.css";
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import RepeatIcon from '@mui/icons-material/Repeat';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import PublishIcon from '@mui/icons-material/Publish';
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import RepeatIcon from "@mui/icons-material/Repeat";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import PublishIcon from "@mui/icons-material/Publish";
 import { Avatar } from "@mui/material";
-
-
 
 const Post = ({ displayName, username, verified, text, image, avatar }) => {
   return (
-    <div className="post" >
-      <div className="post__avatar">
+    <div className="post">
+      <div className="postAvatar">
         <Avatar src={avatar} />
       </div>
-      <div className="post__body">
-        <div className="post__header">
-          <div className="post__headerText">
+      <div className="postBody">
+        <div className="postHeader">
+          <div className="postHeaderText">
             <h3>
               {displayName}{" "}
-              <span className="post__headerSpecial">
-                {verified && <VerifiedUserIcon className="post__badge" />} @
+              <span className="postHeaderSpecial">
+                {verified && <VerifiedUserIcon className="postBadge" />} @
                 {username}
               </span>
             </h3>
           </div>
-          <div className="post__headerDescription">
+          <div className="postHeaderDescription">
             <p>{text}</p>
           </div>
         </div>
-        <img className="image" src={image} alt="" />
-        <div className="post__footer">
-          <ChatBubbleOutlineIcon fontSize="small" />
-          <RepeatIcon fontSize="small" />
-          <FavoriteBorderIcon fontSize="small" />
-          <PublishIcon fontSize="small" />
+        <img className="img" src={image} alt="" />
+        <div className="postFooter">
+          <ChatBubbleOutlineIcon fontSize="small" className="chatBubble" style={{padding:"1rem"}} />
+          <RepeatIcon fontSize="small" className="repeatIcon" style={{padding:"1rem"}}/>
+          <FavoriteBorderIcon fontSize="small" className="FavouriteIcon" style={{padding:"1rem"}}/>
+          <PublishIcon fontSize="small" className="publishIcon" style={{padding:"1rem"}}/>
         </div>
       </div>
     </div>

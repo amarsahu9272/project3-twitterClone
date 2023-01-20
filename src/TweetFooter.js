@@ -14,9 +14,7 @@ function TweetFooter({handleClick}) {
           btnStyle="tweetBoxButton"
         />
     </div>
-    <div className='tweetFooter-sub'>
-        Show 315 Tweets
-    </div>
+   
     </>
   )
 }

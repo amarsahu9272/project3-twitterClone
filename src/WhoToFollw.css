@@ -24,6 +24,14 @@
     font-size: small;
     overflow: hidden;
 }
+.follow-p>div:hover{
+background-color: gainsboro;
+cursor: pointer;
+}
+.follow-p>p{
+
+}
+
 .following {
     display: flex;
     justify-content: space-between;

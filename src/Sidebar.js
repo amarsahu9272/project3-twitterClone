@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 
@@ -14,18 +14,20 @@ import ProfileButton from "./ProfileButton";
 import TwitterButton from "./TwitterButton";
 // import TwitterIcon from "./TwitterIconn";
 import TwitterIconn from "./TwitterIconn";
+import DialogBox from "./DialogBox";
 
+const icons = [
+  { active: "active", Icons: HomeIcon, text: "Home" },
+  { Icons: SearchIcon, text: "Explore" },
+  { Icons: NotificationsNoneIcon, text: "Notifications" },
+  { Icons: MailOutlineIcon, text: "Messages" },
+  { Icons: BookmarkBorderIcon, text: "Bookmarks" },
+  { Icons: ListAltIcon, text: "Lists" },
+  { Icons: PermIdentityIcon, text: "Profile" },
+  { Icons: MoreHorizIcon, text: "More" },
+];
 function Sidebar() {
-  const icons = [
-    { active: "active", Icons: HomeIcon, text: "Home" },
-    { Icons: SearchIcon, text: "Explore" },
-    { Icons: NotificationsNoneIcon, text: "Notifications" },
-    { Icons: MailOutlineIcon, text: "Messages" },
-    { Icons: BookmarkBorderIcon, text: "Bookmarks" },
-    { Icons: ListAltIcon, text: "Lists" },
-    { Icons: PermIdentityIcon, text: "Profile" },
-    { Icons: MoreHorizIcon, text: "More" },
-  ];
+  const [tweetsClick,setTweetsClick]=useState(false)
   return (
     <div className="sidebar">
       {/* <TwitterIcon /> */}
@@ -39,12 +41,14 @@ function Sidebar() {
       ))}
 
       <TwitterButton
-        onClickAction=""
+        onClickAction={() => setTweetsClick(true)}
+        // values={tweetsClick}
         btnText="Tweet"
         variant="outlined"
         btnStyle="sidebar__tweet"
       />
       <ProfileButton />
+      <DialogBox values={tweetsClick}/>
     </div>
   );
 }
