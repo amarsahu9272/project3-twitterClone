@@ -1,0 +1,7 @@
+.tweetFooterIcons{
+    display: flex;
+    color: var(--twitter-color);
+    margin-left: 3rem;
+    gap: 1rem;
+
+}

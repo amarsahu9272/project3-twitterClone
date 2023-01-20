@@ -31,9 +31,10 @@ function DialogBox() {
               id="dialog-description"
               className="dialogContent"
             >
-              <div className="tweetboxDialog">
+              {/* <div className="tweetboxDialog">
                 
-              </div>
+              </div> */}
+              <TweetBox/>
             </DialogContentText>
           </DialogContent>
           <DialogActions>

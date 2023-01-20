@@ -2,7 +2,8 @@ import { Avatar } from "@mui/material";
 import React, { useState } from "react";
 import "./TweetBox.css";
 import profileImge from "./Amr.jpg";
-import TwitterButton from "./TwitterButton";
+// import TwitterButton from "./TwitterButton";
+import TweetFooter from "./TweetFooter";
 
 function TweetBox() {
   const [formValues, setFormValues] = useState({
@@ -49,13 +50,13 @@ function TweetBox() {
             type="text"
           />
         </div>
-        <input
+        {/* <input
           value={tweetImage}
           onChange={(e) => setTweetImage(e.target.value)}
           className="tweetBox__imageInput"
           placeholder="Optional: Enter image URL"
           type="text"
-        />
+        /> */}
 
         {/* <Button
           onClick={sendTweet}
@@ -64,12 +65,13 @@ function TweetBox() {
         >
           Tweet
         </Button> */}
-        <TwitterButton
+        {/* <TwitterButton
           onClickAction={sendTweet}
           btnText="Tweet"
           variant="outlined"
           btnStyle="tweetBoxButton"
-        />
+        /> */}
+        <TweetFooter handleClick={sendTweet}/>
       </form>
     </div>
   );
