@@ -1,5 +1,5 @@
 import {
-  Button,
+  // Button,
   Dialog,
   DialogActions,
   DialogContent,
@@ -33,7 +33,7 @@ function DialogBox({ values }) {
       >
         <div className="dialogBox">
           <DialogTitle id="dialog-title" className="dialogTitle">
-            <CloseIcon className="closeIcon" style={{padding:"1rem"}}/>
+            <CloseIcon className="closeIcon" style={{padding:".5rem"}}/>
           </DialogTitle>
           <DialogContent>
             <DialogContentText

@@ -10,6 +10,7 @@
 
 }
 
+
 .whatsHappeningContainer>h2 {
     font-size: 1.125rem;
     font-weight: 800;
@@ -18,6 +19,13 @@
 .trending {
     display: flex;
     justify-content: space-between;
+
+
+}
+
+.trends-p>div:hover {
+    background-color: gainsboro;
+    cursor: pointer;
 }
 
 .trends-p {
@@ -30,11 +38,8 @@
     font-size: small;
     overflow: hidden;
 }
-a{
+
+a {
     text-decoration: none;
-    color:var(--twitter-color)   
-}
-.trends-p>div:hover{
-    background-color: gainsboro;
-    cursor: pointer;
+    color: var(--twitter-color)
 }
