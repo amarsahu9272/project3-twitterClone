@@ -6,6 +6,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import React, { useState } from "react";
 import "./DialogBox.css";
 import WhatsHappeningTweets from "./WhatsHappeningTweets";
@@ -15,33 +16,30 @@ function DialogBox({ values }) {
   const [open, setOpen] = useState({ values });
   return (
     <>
-      <Button onClick={() => setOpen(true)}>opendialog</Button>
+      {/* <Button onClick={() => setOpen(true)}>opendialog</Button> */}
       <Dialog
         className="dialog"
         open={open}
         onClose={() => setOpen(false)}
-        // aria-aria-labelledby="dialog-title"
-        // aria-describedby="dialog-description"
         PaperProps={{
           style: {
-            width: "80%",
-            height: "auto",
+            width: "40%",
+            height: "45%",
+            marginTop: "-18rem",
+            marginLeft: "2rem",
+            borderRadius: "1rem",
           },
         }}
-        // maxWidth="lg"
-
       >
-      
         <div className="dialogBox">
-          {/* <DialogTitle id="dialog-title" className="dialogTitle">
-          
-          </DialogTitle> */}
+          <DialogTitle id="dialog-title" className="dialogTitle">
+            <CloseIcon className="closeIcon" style={{padding:"1rem"}}/>
+          </DialogTitle>
           <DialogContent>
             <DialogContentText
               id="dialog-description"
               className="dialogContent"
             >
-              {/* <TweetBox/> */}
               <WhatsHappeningTweets />
               <TweetFooter />
             </DialogContentText>

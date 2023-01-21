@@ -1,1 +1,6 @@
 
+.closeIcon:hover {
+    color: black;
+    background-color: #e8f5fe;
+    border-radius: 50%;
+}

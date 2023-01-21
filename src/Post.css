@@ -4,7 +4,8 @@
     border-bottom: 0.063rem solid var(--twitter-background);
     padding-bottom: 0.625rem;
 }
-.post:hover{
+
+.post:hover {
     background-color: rgb(247, 244, 244);
 }
 
@@ -49,33 +50,37 @@
     padding: 1.25rem;
 }
 
-.img{
+.img {
     width: 32rem;
     height: 30rem;
 }
 
 .chatBubble:hover {
     color: var(--twitter-color);
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(214, 248, 252);
     border-radius: 50%;
 }
 
 .repeatIcon:hover {
     color: rgb(5, 206, 156);
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
     border-radius: 50%;
 }
 
 .FavouriteIcon:hover {
     color: red;
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(246, 206, 206);
     border-radius: 50%;
 }
 
 .publishIcon:hover {
     color: rgb(5, 206, 156);
-    background-color: #e8f5fe;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
     border-radius: 50%;
-    
-    
+
+
 }

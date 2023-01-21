@@ -30,10 +30,10 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
         </div>
         <img className="img" src={image} alt="" />
         <div className="postFooter">
-          <ChatBubbleOutlineIcon fontSize="small" className="chatBubble" style={{padding:"1rem"}} />
-          <RepeatIcon fontSize="small" className="repeatIcon" style={{padding:"1rem"}}/>
-          <FavoriteBorderIcon fontSize="small" className="FavouriteIcon" style={{padding:"1rem"}}/>
-          <PublishIcon fontSize="small" className="publishIcon" style={{padding:"1rem"}}/>
+          <ChatBubbleOutlineIcon fontSize="small" className="chatBubble" style={{padding:".5rem"}} />
+          <RepeatIcon fontSize="small" className="repeatIcon" style={{padding:".5rem"}}/>
+          <FavoriteBorderIcon fontSize="small" className="FavouriteIcon" style={{padding:".5rem"}}/>
+          <PublishIcon fontSize="small" className="publishIcon" style={{padding:".5rem"}}/>
         </div>
       </div>
     </div>

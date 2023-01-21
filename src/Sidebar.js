@@ -27,7 +27,7 @@ const icons = [
   { Icons: MoreHorizIcon, text: "More" },
 ];
 function Sidebar() {
-  const [tweetsClick,setTweetsClick]=useState(false)
+  const [tweetsClick,setTweetsClick]=useState(null)
   return (
     <div className="sidebar">
       {/* <TwitterIcon /> */}
@@ -42,13 +42,13 @@ function Sidebar() {
 
       <TwitterButton
         onClickAction={() => setTweetsClick(true)}
-        // values={tweetsClick}
+        values={tweetsClick}
         btnText="Tweet"
         variant="outlined"
         btnStyle="sidebar__tweet"
       />
       <ProfileButton />
-      <DialogBox values={tweetsClick}/>
+      {/* <DialogBox values={tweetsClick} /> */}
     </div>
   );
 }
