@@ -27,3 +27,22 @@
     align-items: center;
     width: 14rem;
 }
+
+.popoverContent {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 6rem;
+    margin-top: 2rem;
+}
+
+.popoverContent>div{
+    padding-left: 1rem;
+    font-weight: 500;
+    height: 2rem;
+    
+}
+.popoverContent>div:hover{
+background-color: gainsboro;
+cursor: pointer;
+}

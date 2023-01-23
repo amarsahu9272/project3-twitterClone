@@ -1,29 +1,60 @@
-import React from "react";
-import { Avatar } from "@mui/material";
+import React, { useState } from "react";
+import { Avatar, Popover } from "@mui/material";
 import "./ProfileButton.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import profileImge from "./Amr.jpg";
+import { useSetRecoilState } from "recoil";
+import { isUserLoggedInAtom } from "./recoil-states";
+import { useNavigate } from "react-router";
 
 function ProfileButton() {
+  // const [open, setOpen] = useState(null);
+  const [anchor, setAnchor] = useState(null);
+  const nevigate = useNavigate();
+  const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom);
+
+  const popoverProfileButton = (e) => {
+    setAnchor(e.currentTarget);
+  };
+  const handleLogout = () => {
+    setUserLoggedInStatus(false);
+    nevigate("/");
+  };
   return (
-    <div className="profile">
-      <div className="profile-btn">
-        <div className="avatar-p">
-          <Avatar
-            src={profileImge}
-            // "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png"
-          />
-        </div>
-        <div className="profile-tag">
-          <h3>
-            Amar Sahu
-            <p className="post__headerSpecial"> @amar123</p>
-          </h3>
-          <span>
-            <MoreHorizIcon />
-          </span>
+    <div className="profile-pop">
+      <div className="profile" onClick={popoverProfileButton}>
+        <div className="profile-btn">
+          <div className="avatar-p">
+            <Avatar src={profileImge} />
+          </div>
+          <div className="profile-tag">
+            <h3>
+              Amar Sahu
+              <p className="post__headerSpecial"> @amar123</p>
+            </h3>
+            <span>
+              <MoreHorizIcon />
+            </span>
+          </div>
         </div>
       </div>
+      <Popover
+        open={Boolean(anchor)}
+        anchorEl={anchor}
+        onClose={() => setAnchor(null)}
+        PaperProps={{
+          style: {
+            marginTop: "-4em",
+            marginLeft: "-3rem",
+            borderRadius: "1rem",
+          },
+        }}
+      >
+        <div className="popoverContent">
+          <div>Add an existing account</div>
+          <div onClick={handleLogout}>Log out</div>
+        </div>
+      </Popover>
     </div>
   );
 }

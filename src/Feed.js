@@ -2,11 +2,10 @@ import React from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-
+import { tweetPosts } from "./const";
 
 function Feed() {
-  
-  let posts = JSON.parse(localStorage.getItem("tweet")) || [];
+  // let posts = JSON.parse(localStorage.getItem("tweet")) || [];
 
   return (
     <div className="feed">
@@ -20,7 +19,7 @@ function Feed() {
 
       <TweetBox />
 
-      {posts.map((post) => (
+      {/* {posts.map((post) => (
         <Post
           key={post.text}
           displayName={post.displayName}
@@ -30,11 +29,22 @@ function Feed() {
           avatar={post.avatar}
           image={post.image}
         />
-      ))}
+      ))} */}
 
-      {/* <FlipMove>
-       
-      </FlipMove> */}
+      {tweetPosts.map((post) => (
+        <Post
+          // profilePic={post.profilePic}
+          // key={post.name}
+          // name={post.name}
+          // verified={post.verified}
+          // handlerName={post.handlerName}
+          // joinedDate={post.joinedDate}
+          // organization={post.organization}
+          // tweetText={post.tweetText}
+          // tweetPic={post.tweetPic}
+          profiledata={post}
+        />
+      ))}
     </div>
   );
 }

@@ -7,46 +7,55 @@ const whatHappData = [
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
+    isNotInterested:true
   },
   {
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
+    isNotInterested:false
   },
   {
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
+    isNotInterested:false
   },
   {
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
+    isNotInterested:false
   },
   {
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
+    isNotInterested:false
   },
   {
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
+    isNotInterested:false
   },
   {
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
+    isNotInterested:false
   },
   {
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
+    isNotInterested:false
   },
   {
     trends: "Trending in India",
     trending: "BBCDocumentary",
     noTweet: "135K",
+    isNotInterested:false
   },
 ];
 export default function WhatsHappening() {
@@ -56,7 +65,7 @@ export default function WhatsHappening() {
       {/* <TwitterEmbedded/> */}
       <div className="trends-p">
         {whatHappData.map((wData, i) => (
-          <div className="trending">
+          !wData.isNotInterested && <div className="trending">
             <div className="trends">
               <span>{wData.trends}</span>
               <h3>#{wData.trending}</h3>
@@ -66,7 +75,7 @@ export default function WhatsHappening() {
           </div>
         ))}
       </div>
-      <a href="#">Show more</a>
+      <a href="https://twitter.com/nanapatekar9272">Show more</a>
     </div>
   );
 }

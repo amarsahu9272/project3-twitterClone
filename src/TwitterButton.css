@@ -33,3 +33,13 @@
     width: 5rem;
 
 }
+
+.followingButton {
+    background-color: black !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 1.875rem !important;
+    width: 6rem;
+}
