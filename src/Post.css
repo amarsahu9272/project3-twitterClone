@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1.25rem;
+    /* gap: 1rem; */
 }
 
 .postHeaderDescription {
@@ -83,4 +84,24 @@
     border-radius: 50%;
 
 
+}
+.postIcon{
+    margin-bottom: .3rem;
+    /* color: red; */
+}
+.comment{
+    display: flex;
+    align-items: center;
+}
+.retweet{
+    display: flex;
+    align-items: center;
+}
+.like{
+    display: flex;
+    align-items: center;
+}
+.share{
+    display: flex;
+    align-items: center;
 }

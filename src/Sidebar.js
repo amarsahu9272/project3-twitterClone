@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Sidebar.css";
 import SidebarOption from "./SidebarOption";
 
@@ -11,8 +11,6 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ProfileButton from "./ProfileButton";
-import TwitterButton from "./TwitterButton";
-// import TwitterIcon from "./TwitterIconn";
 import TwitterIconn from "./TwitterIconn";
 import DialogBox from "./DialogBox";
 
@@ -27,10 +25,9 @@ const icons = [
   { Icons: MoreHorizIcon, text: "More" },
 ];
 function Sidebar() {
-  const [tweetsClick,setTweetsClick]=useState(null)
+  
   return (
     <div className="sidebar">
-      {/* <TwitterIcon /> */}
       <TwitterIconn />
       {icons.map((icon, i) => (
         <SidebarOption
@@ -39,14 +36,7 @@ function Sidebar() {
           text={icon.text}
         />
       ))}
-
-      <TwitterButton
-        onClickAction={() => setTweetsClick(true)}
-        values={tweetsClick}
-        btnText="Tweet"
-        variant="outlined"
-        btnStyle="sidebar__tweet"
-      />
+      <DialogBox/>
       <ProfileButton />
       {/* <DialogBox values={tweetsClick} /> */}
     </div>

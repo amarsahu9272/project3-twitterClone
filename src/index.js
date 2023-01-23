@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
+import Router from "./Router";
+import { BrowserRouter } from "react-router-dom";
 
 // const router = createBrowserRouter([
 //   {
@@ -21,9 +23,9 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
-    {/* <RecoilRoot>
-      <RouterProvider router={router} />
-    </RecoilRoot> */}
+    {/* <App /> */}
+     <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   </React.StrictMode>
 );

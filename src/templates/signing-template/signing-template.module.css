@@ -10,6 +10,7 @@
         font-size: 2rem;
         line-height: calc(36rem/16);
         text-align: center;
+        margin-bottom: 2rem;
     }
     .icon{
         color: black;
@@ -21,7 +22,7 @@
         font-weight: 700;
     }
     .wrapper{
-        padding: 2rem calc(150rem/16);
+        padding: .5rem calc(150rem/16);
         min-height: calc(600rem/16);
     }
     .seprator{

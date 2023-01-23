@@ -11,12 +11,19 @@ import React, { useState } from "react";
 import "./DialogBox.css";
 import WhatsHappeningTweets from "./WhatsHappeningTweets";
 import TweetFooter from "./TweetFooter";
+import TwitterButton from "./TwitterButton";
 
-function DialogBox({ values }) {
-  const [open, setOpen] = useState({ values });
+function DialogBox() {
+  const [open, setOpen] = useState(false);
   return (
     <>
       {/* <Button onClick={() => setOpen(true)}>opendialog</Button> */}
+      <TwitterButton
+        onClickAction={() => setOpen(true)}
+        btnText="Tweet"
+        variant="outlined"
+        btnStyle="sidebar__tweet"
+      />
       <Dialog
         className="dialog"
         open={open}
@@ -33,7 +40,7 @@ function DialogBox({ values }) {
       >
         <div className="dialogBox">
           <DialogTitle id="dialog-title" className="dialogTitle">
-            <CloseIcon className="closeIcon" style={{padding:".5rem"}}/>
+            <CloseIcon onClick={() => setOpen(false)} className="closeIcon" style={{ padding: ".5rem" }} />
           </DialogTitle>
           <DialogContent>
             <DialogContentText
