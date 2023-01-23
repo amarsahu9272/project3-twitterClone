@@ -2,12 +2,19 @@ import React from "react";
 import "./TwitterButton.css";
 import { Button } from "@mui/material";
 
-function TwitterButton({key, onClickAction, btnText, type, variant, btnStyle }) {
+function TwitterButton({
+  keys,
+  onClickAction,
+  btnText,
+  type,
+  variant,
+  btnStyle,
+}) {
   return (
     <div>
       {/* Button -> Tweet */}
       <Button
-      key={key}
+        key={keys}
         onClick={onClickAction}
         variant={variant}
         className={`${btnStyle}`}

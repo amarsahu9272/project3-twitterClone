@@ -18,7 +18,7 @@ function TweetFooterIcons() {
   return (
     <div className="tweetFooterIcons">
         {footerIcon.map((icon,i)=>(
-            <p style={{padding: ".4rem"}}>{<icon.Icon/>}</p>
+            <p key={i} style={{padding: ".4rem"}}>{<icon.Icon/>}</p>
         ))}
     </div>
   );

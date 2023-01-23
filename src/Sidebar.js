@@ -25,18 +25,19 @@ const icons = [
   { Icons: MoreHorizIcon, text: "More" },
 ];
 function Sidebar() {
-  
   return (
     <div className="sidebar">
       <TwitterIconn />
       {icons.map((icon, i) => (
         <SidebarOption
+          key={i}
+          keys={i}
           active={icon.active}
           Icon={icon.Icons}
           text={icon.text}
         />
       ))}
-      <DialogBox/>
+      <DialogBox />
       <ProfileButton />
       {/* <DialogBox values={tweetsClick} /> */}
     </div>

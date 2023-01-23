@@ -43,3 +43,25 @@ a {
     text-decoration: none;
     color: var(--twitter-color)
 }
+
+
+.popoverContent-w {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+   
+}
+
+.popoverContent-w div{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    font-weight: 500;
+    height: 3rem;
+   
+    
+}
+.popoverContent-w>div:hover{
+background-color: gainsboro;
+cursor: pointer;
+}

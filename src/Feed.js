@@ -42,6 +42,7 @@ function Feed() {
           // organization={post.organization}
           // tweetText={post.tweetText}
           // tweetPic={post.tweetPic}
+          key={post.name}
           profiledata={post}
         />
       ))}

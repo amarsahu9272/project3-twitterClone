@@ -13,3 +13,8 @@ export const followButtonAtom = atom({
   key: "followButtonData",
   default: true,
 });
+
+export const isInterestAtom = atom({
+  key:"isInterested",
+  default:false
+})

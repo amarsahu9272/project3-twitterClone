@@ -18,7 +18,11 @@ function ProfileButton() {
   };
   const handleLogout = () => {
     setUserLoggedInStatus(false);
+    setAnchor(null);
     nevigate("/");
+  };
+  const handleExistingUser = () => {
+    setAnchor(null);
   };
   return (
     <div className="profile-pop">
@@ -51,7 +55,7 @@ function ProfileButton() {
         }}
       >
         <div className="popoverContent">
-          <div>Add an existing account</div>
+          <div onClick={handleExistingUser}>Add an existing account</div>
           <div onClick={handleLogout}>Log out</div>
         </div>
       </Popover>

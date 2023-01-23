@@ -10,41 +10,41 @@ const follow = [
     followName: "President of India",
     followUserName: "@rashtrapatibhvn",
     folloDesignation: "Indian govenment official",
-    isFollow: true,
+    isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn1",
     folloDesignation: "",
     isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn2",
     folloDesignation: "",
     isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn3",
     folloDesignation: "",
     isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn4",
     folloDesignation: "",
     isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn5",
     folloDesignation: "indian govenment official",
     isFollow: false,
   },
   {
     followName: "President of India",
-    followUserName: "@rashtrapatibhvn",
+    followUserName: "@rashtrapatibhvn6",
     folloDesignation: "indian govenment official",
     isFollow: false,
   },
@@ -52,18 +52,26 @@ const follow = [
 function WhoToFollw() {
   // const setFollowButtonData = useSetRecoilState(followButtonAtom);
   // const followButtonAtomData = useRecoilValue(followButtonAtom);
-  const [isFollows, setIsFollows] = useState(follow);
-  const handleFollowButton = () => {
+  let [followsData, setFollowsData] = useState(follow);
+  function handleFollowButton(fData) {
     // setFollowButtonData(!followButtonAtomData);
-    setIsFollows(...isFollows, !isFollows.isFollow);
-  };
+
+    const indexOfClickedFollow = followsData.findIndex(
+      (index) => index.followUserName === fData.followUserName
+    );
+    // console.log(fData.followUserName);
+    followsData[indexOfClickedFollow].isFollow =
+      !followsData[indexOfClickedFollow].isFollow;
+    setFollowsData([...followsData]);
+    console.log(followsData)
+  }
   return (
     <div className="whoToFollwContainer">
       <h2>Who to follow</h2>
       {/* <TwitterEmbedded/> */}
       <div className="follow-p">
-        {follow.map((fData, i) => (
-          <div key={i} className="following">
+        {followsData.map((fData, i) => (
+          <div  className="following">
             <Avatar src={profileImge} />
             <div className="follows">
               <h3>{fData.followName}</h3>
@@ -71,32 +79,18 @@ function WhoToFollw() {
               <span>{fData.folloDesignation}</span>
             </div>
 
-            {/* <TwitterButton
-              onClickAction={handleFollowButton}
-              btnText={isFollows.isFollow ? "Follow" : "Following"}
+            <TwitterButton
+              keys={i}
+              onClickAction={() => handleFollowButton(fData)}
+              btnText={!fData.isFollow ? "Follow" : "Following"}
               variant="outlined"
-              btnStyle={isFollows.isFollow ? "followButton" : "followingButton"}
-            /> */}
+              btnStyle={!fData.isFollow ? "followButton" : "followingButton"}
+            />
 
-            {fData.isFollow ? (
-              <TwitterButton
-                onClickAction={handleFollowButton}
-                btnText={isFollows.isFollow ? "Follow" : "Following"}
-                variant="outlined"
-                btnStyle={
-                  isFollows.isFollow ? "followButton" : "followingButton"
-                }
-              />
-            ) : (
-              <TwitterButton
-                onClickAction={handleFollowButton}
-                btnText={isFollows.isFollow ? "Following" : "Follow"}
-                variant="outlined"
-                btnStyle={
-                  isFollows.isFollow ? "followingButton" : "followButton"
-                }
-              />
-            )}
+            {/* <button onClick={() => handleFollowButton(fData)}>
+              {!fData.isFollow ? "follow" : "Following"}
+            </button> */}
+
           </div>
         ))}
       </div>
