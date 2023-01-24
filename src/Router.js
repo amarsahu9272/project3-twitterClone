@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 // import App from "./App";
 import HomePage from "./pages/home";
-import ProfilePage from "./pages/ProfilePage";
+// import ProfilePage from "./pages/ProfilePage";
 import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/signup";
 import ProfilePage from "./ProfilePage";

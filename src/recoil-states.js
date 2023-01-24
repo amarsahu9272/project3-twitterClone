@@ -15,7 +15,7 @@ export const followButtonAtom = atom({
 });
 
 export const isInterestAtom = atom({
-<<<<<<< HEAD
+// <<<<<<< HEAD
   key: "isInterested",
   default: false,
 });
@@ -24,10 +24,10 @@ export const isProfileClickedAtom = atom({
   key: "isProfile",
   default: true,
 });
-=======
-  key:"isInterested",
-  default:false
-})
+// =======
+//   key:"isInterested",
+//   default:false
+// })
 
 export const selectFile=atom({
   key:"selectedFile",
@@ -38,4 +38,4 @@ export const totalTweets = atom({
   key: "totalTweets",
   default: tweetPosts,
 });
->>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed
+// >>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed

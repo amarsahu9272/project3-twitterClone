@@ -2,30 +2,30 @@ import React from "react";
 import profileImge from "./Amr.jpg";
 import { Avatar } from "@mui/material";
 import "./WhatsHappeningTweets.css";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { isProfileClickedAtom } from "./recoil-states";
-=======
+// =======
 import { useRecoilState } from "recoil";
 import {selectFile} from "./recoil-states";
->>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed
+// >>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed
 function WhatsHappeningTweets({
   values,
   handleChange,
   tweetImage,
   handleTweetImage,
 }) {
-<<<<<<< HEAD
+// <<<<<<< HEAD
   const setProfileRecoil = useSetRecoilState(isProfileClickedAtom)
   const navigate = useNavigate();
   const handleProfileClick = () => {
     setProfileRecoil(false)
     navigate('/')
   };
-=======
+// =======
   const [selectedFile, setSelectedFile] = useRecoilState(selectFile);
->>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed
+// >>>>>>> 3bdb81c48d786a89afbcaf830983655cb5e7e3ed
   return (
     <>
       <div className="WhatsHappeningTweets">
