@@ -63,7 +63,7 @@ function WhoToFollw() {
     followsData[indexOfClickedFollow].isFollow =
       !followsData[indexOfClickedFollow].isFollow;
     setFollowsData([...followsData]);
-    console.log(followsData)
+    // console.log(followsData)
   }
   return (
     <div className="whoToFollwContainer">
