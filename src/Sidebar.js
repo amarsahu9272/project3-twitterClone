@@ -30,7 +30,6 @@ function Sidebar() {
       <TwitterIconn />
       {icons.map((icon, i) => (
         <SidebarOption
-          key={i}
           keys={i}
           active={icon.active}
           Icon={icon.Icons}

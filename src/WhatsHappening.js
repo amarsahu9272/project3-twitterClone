@@ -8,54 +8,63 @@ import "./WhatsHappening.css";
 
 const whatHappData = [
   {
+    id:1,
     trends: "Entertainment · Trending",
     trending: "Amitabh Bachchan",
     noTweet: "123K",
     isNotInterested: false,
   },
   {
+    id:2,
     trends: "Sports · Trending",
     trending: "AINassr",
     noTweet: "30.1K",
     isNotInterested: false,
   },
   {
+    id:3,
     trends: "Trending in India",
-    trending: "BBCDocumentary",
+    trending: "BCDocumentary",
     noTweet: "135K",
     isNotInterested: false,
   },
   {
+    id:4,
     trends: "Entertainment · Trending",
     trending: "Bachchan pandey",
     noTweet: "123K",
     isNotInterested: false,
   },
   {
+    id:5,
     trends: "Sports · Trending",
     trending: "Dhoni",
     noTweet: "30.1K",
     isNotInterested: false,
   },
   {
+    id:6,
     trends: "Trending in India",
     trending: "ACCDocumentary",
     noTweet: "135K",
     isNotInterested: false,
   },
   {
+    id:7,
     trends: "Entertainment · Trending",
     trending: "Akshay kumar",
     noTweet: "123K",
     isNotInterested: false,
   },
   {
+    id:8,
     trends: "Sports · Trending",
     trending: "Virat Kholi",
     noTweet: "30.1K",
     isNotInterested: false,
   },
   {
+    id:9,
     trends: "Trending in India",
     trending: "BCCDocumentary",
     noTweet: "135K",
@@ -69,19 +78,19 @@ export default function WhatsHappening() {
   const popoverProfileButton = (e) => {
     setAnchor(e.currentTarget);
   };
-  const handleInterest = (wData,i) => {
-    var updatedData= [...whatHappeningData]
+  const handleInterest = (wData) => {
+    // var updatedData= [...whatHappeningData]
     // console.log( udatedData[i].isNotInterested)
-    updatedData[i].isNotInterested=true
-
-    setWhatHappeningData(updatedData)
-    // console.log(wData)
-    // const indexOfClickedHappen = whatHappeningData.findIndex(
-    //   (index) => index.trending === wData.trending
-    // );
-    // whatHappeningData[indexOfClickedHappen].isNotInterested =
-    //   !whatHappeningData[indexOfClickedHappen].isNotInterested;
-    // setWhatHappeningData([...whatHappeningData]);
+    // updatedData[i].isNotInterested=true
+    // setWhatHappeningData(updatedData)
+    console.log(wData.id)
+    const indexOfClickedHappen = whatHappeningData.findIndex(
+      (index) => index.id === wData.id
+    );
+    console.log(indexOfClickedHappen)
+    whatHappeningData[indexOfClickedHappen].isNotInterested = true
+      // !whatHappeningData[indexOfClickedHappen].isNotInterested;
+    setWhatHappeningData([...whatHappeningData]);
     setUserIntersted(false);
     setAnchor(null)
   };
@@ -91,9 +100,9 @@ export default function WhatsHappening() {
       {/* <TwitterEmbedded/> */}
       <div className="trends-p">
         {whatHappeningData.map(
-          (wData, i) =>
+          (wData) =>
             !wData.isNotInterested && (
-              <div key={i} className="trending">
+              <div key={whatHappeningData.id} className="trending">
                 <div className="trends">
                   <span>{wData.trends}</span>
                   <h3>#{wData.trending}</h3>
@@ -112,10 +121,10 @@ export default function WhatsHappening() {
                   }}
                 >
                   <div className="popoverContent-w">
-                    <div onClick={() => handleInterest(wData,i)}>
+                    <div onClick={() => handleInterest(wData)}>
                       Not interested in this
                     </div>
-                    <div onClick={() => handleInterest(wData,i)}>
+                    <div onClick={() => handleInterest(wData)}>
                       This trend is harful or spammy
                     </div>
                   </div>

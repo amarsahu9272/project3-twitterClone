@@ -15,6 +15,11 @@ export const followButtonAtom = atom({
 });
 
 export const isInterestAtom = atom({
-  key:"isInterested",
-  default:false
-})
+  key: "isInterested",
+  default: false,
+});
+
+export const isProfileClickedAtom = atom({
+  key: "isProfile",
+  default: true,
+});
