@@ -52,8 +52,9 @@
 }
 
 .img {
-    width: 32rem;
-    height: 30rem;
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
 }
 
 .chatBubble:hover {
