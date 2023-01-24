@@ -1,0 +1,45 @@
+.sidebar__tweet {
+    background-color: var(--twitter-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 1.875rem !important;
+    height: 3.125rem !important;
+    margin-top: 1.25rem !important;
+    width: 15rem;
+}
+
+.tweetBoxButton {
+    background-color: var(--twitter-color) !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 1.875rem !important;
+    width: 5rem;
+    height: 2.5rem !important;
+    /* margin-top: 1.25 !important; */
+    /* margin-left: 33rem !important; */
+}
+
+.followButton {
+    background-color: black !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 1.875rem !important;
+    width: 5rem;
+
+}
+
+.followingButton {
+    background-color: black !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    border-radius: 1.875rem !important;
+    width: 6rem;
+}

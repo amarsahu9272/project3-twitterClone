@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-// import db from "./firebase";
-import FlipMove from "react-flip-move";
+// import { tweetPosts } from "./const";
+import {totalTweets} from "./recoil-states";
+import {useRecoilState} from "recoil";
 
 function Feed() {
-  //   const [post, setPosts] = useState([]);
-  let posts = JSON.parse(localStorage.getItem("tweet"));
+  // let posts = JSON.parse(localStorage.getItem("tweet")) || [];
+  const [tweetPosts, setTweetPosts] = useRecoilState(totalTweets);
 
   return (
     <div className="feed">
       <div className="feed__header">
         <h2>Home</h2>
+        <div>
+          <p>For you</p>
+          <p>Following</p>
+        </div>
       </div>
 
       <TweetBox />
 
-      {posts.map((post) => (
+      {/* {posts.map((post) => (
         <Post
           key={post.text}
           displayName={post.displayName}
@@ -27,11 +32,23 @@ function Feed() {
           avatar={post.avatar}
           image={post.image}
         />
-      ))}
+      ))} */}
 
-      {/* <FlipMove>
-       
-      </FlipMove> */}
+      {tweetPosts.map((post) => (
+        <Post
+          // profilePic={post.profilePic}
+          // key={post.name}
+          // name={post.name}
+          // verified={post.verified}
+          // handlerName={post.handlerName}
+          // joinedDate={post.joinedDate}
+          // organization={post.organization}
+          // tweetText={post.tweetText}
+          // tweetPic={post.tweetPic}
+          key={post.name}
+          profiledata={post}
+        />
+      ))}
     </div>
   );
 }

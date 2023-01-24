@@ -1,0 +1,19 @@
+.searchTwitter {
+    display: flex;
+    align-items: center;
+    background-color: var(--twitter-background);
+    padding: .625rem;
+    border-radius: 1.25rem;
+    margin-top: .625rem;
+    margin-left: 1.25rem;
+    position: sticky;
+}
+
+.searchTwitter>input {
+    border: none;
+    background-color: var(--twitter-background);
+}
+
+.searchTwitterSearchIcon {
+    color: gray;
+}

@@ -1,77 +1,54 @@
-import { Avatar, Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./TweetBox.css";
+// import TwitterButton from "./TwitterButton";
+import TweetFooter from "./TweetFooter";
+import ShowTweet from "./ShowTweet";
+import WhatsHappeningTweets from "./WhatsHappeningTweets";
+import profileImage from './Amr.jpg'
+import { useRecoilState } from "recoil";
+import { selectFile } from "./recoil-states";
+import { totalTweets } from "./recoil-states";
 
 function TweetBox() {
-  // displayName: "", username: "", verified: "" ,text:"",image:"",avatar:""
-  const [formValues, setFormValues] = useState({
-    displayName: "",
-    username: "",
-    verified: "",
-    text: "",
-    image: "",
-    avatar: "",
-  });
+ const [tweets, setTweets] = useRecoilState(totalTweets);
+ 
+  const [formValues, setFormValues] = useState({});
+  
+  const [selectedFile, setSelectedFile] = useRecoilState(selectFile);
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
 
   const sendTweet = (e) => {
     e.preventDefault();
-
-    // db.collection("posts").add({
-    //   displayName: "Rafeh Qazi",
-    //   username: "cleverqazi",
-    //   verified: true,
-    //   text: tweetMessage,
-    //   image: tweetImage,
-    //   avatar:
-    //     "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-    // });
-    setFormValues({
-      ...formValues,
-      displayName: "Rafeh Qazi",
-      username: "cleverqazi",
+    let obj = {
+      name:"Nitin Mharanur",
       verified: true,
-      text: tweetMessage,
-      image: tweetImage,
-      avatar:
-        "https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png",
-    });
-    // setTweetMessage("");
-    // setTweetImage("");
-    let post = JSON.parse(localStorage.getItem("tweet")) || [];
-    post.push(formValues);
-    localStorage.setItem("tweet", JSON.stringify(post));
-    // setTweetMessage("");
-    // setTweetImage("");
+      tweetText: tweetMessage,
+      tweetPic: selectedFile,
+      avatar: profileImage,
+      handlerName:"@IamNiitiin",
+      joinedDate:" Dec 2023"
+    };
+    // let post = JSON.parse(localStorage.getItem("tweet"));
+    // post.unshift(...tweets,obj);
+    // localStorage.setItem("tweet", JSON.stringify(post));
+    setTweets([obj,...tweets]);
+    setTweetMessage("");
+    setTweetImage("");
+    setSelectedFile(null);
   };
   return (
     <div className="tweetBox">
       <form onSubmit={sendTweet}>
-        <div className="tweetBox__input">
-          <Avatar src="https://kajabi-storefronts-production.global.ssl.fastly.net/kajabi-storefronts-production/themes/284832/settings_images/rLlCifhXRJiT0RoN2FjK_Logo_roundbackground_black.png" />
-          <input
-            onChange={(e) => setTweetMessage(e.target.value)}
-            value={tweetMessage}
-            placeholder="What's happening?"
-            type="text"
-          />
-        </div>
-        <input
-          value={tweetImage}
-          onChange={(e) => setTweetImage(e.target.value)}
-          className="tweetBox__imageInput"
-          placeholder="Optional: Enter image URL"
-          type="text"
+        <WhatsHappeningTweets
+          btnStyle="WhatsHappeningTweets"
+          values={tweetMessage}
+          handleChange={(e) => setTweetMessage(e.target.value)}
+          tweetImage={tweetImage}
+          handleTweetImage={(e) => setTweetImage(e.target.value)}
         />
-
-        <Button
-          onClick={sendTweet}
-          type="submit"
-          className="tweetBox__tweetButton"
-        >
-          Tweet
-        </Button>
+        <TweetFooter  handleClick={sendTweet} />
+        <ShowTweet />
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Widgets from "./Widgets";
+// import DialogBox from "./DialogBox";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Sidebar />
       <Feed />
       <Widgets />
+      {/* <DialogBox/> */}
     </div>
   );
 }

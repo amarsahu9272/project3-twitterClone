@@ -1,46 +1,108 @@
 .post {
     display: flex;
     align-items: flex-start;
-    border-bottom: 1px solid var(--twitter-background);
-    padding-bottom: 10px;
+    border-bottom: 0.063rem solid var(--twitter-background);
+    padding-bottom: 0.625rem;
 }
 
-.post__body {
+.post:hover {
+    background-color: rgb(247, 244, 244);
+}
+
+.postBody {
     flex: 1;
-    padding: 10px;
+    padding: 0.625rem;
+    position: relative;
 }
 
-.post__body>img {
-    border-radius: 20px;
+.postBody>img {
+    border-radius: 1.25rem;
 }
 
-.post__footer {
+.postFooter {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 1.25rem;
+    /* gap: 1rem; */
 }
 
-.post__headerDescription {
-    margin-bottom: 10px;
+.postHeaderDescription {
+    margin-bottom: 0.625rem;
     font-size: 15px;
 }
 
-.post__headerText>h3 {
-    font-size: 15px;
-    margin-bottom: 5px;
+.postHeaderText>h3 {
+    font-size: 0.938rem;
+    margin-bottom: 0.313rem;
 }
 
-.post__badge {
-    font-size: 14px !important;
+.postBadge {
+    font-size: 0.875rem !important;
     color: var(--twitter-color);
 }
 
-.post__headerSpecial {
+.postHeaderSpecial {
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: gray;
 }
 
-.post__avatar {
-    padding: 20px;
+.postAvatar {
+    padding: 1.25rem;
+}
+
+.img {
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+}
+
+.chatBubble:hover {
+    color: var(--twitter-color);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(214, 248, 252);
+    border-radius: 50%;
+}
+
+.repeatIcon:hover {
+    color: rgb(5, 206, 156);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
+    border-radius: 50%;
+}
+
+.FavouriteIcon:hover {
+    color: red;
+    /* background-color: #e8f5fe; */
+    background-color: rgb(246, 206, 206);
+    border-radius: 50%;
+}
+
+.publishIcon:hover {
+    color: rgb(5, 206, 156);
+    /* background-color: #e8f5fe; */
+    background-color: rgb(200, 248, 236);
+    border-radius: 50%;
+
+
+}
+.postIcon{
+    margin-bottom: .3rem;
+    /* color: red; */
+}
+.comment{
+    display: flex;
+    align-items: center;
+}
+.retweet{
+    display: flex;
+    align-items: center;
+}
+.like{
+    display: flex;
+    align-items: center;
+}
+.share{
+    display: flex;
+    align-items: center;
 }

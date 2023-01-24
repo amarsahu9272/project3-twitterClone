@@ -1,0 +1,10 @@
+.showTweets{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--twitter-color);
+    font-weight: 500;
+    border-bottom: 0.063rem solid var(--twitter-background);
+    height: 3rem;
+    /* margin-top: 1rem; */
+}

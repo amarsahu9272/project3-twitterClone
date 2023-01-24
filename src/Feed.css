@@ -1,7 +1,8 @@
 .feed {
-    flex: 0.4;
-    border-right: 1px solid var(--twitter-background);
-    min-width: fit-content;
+    flex: 0.5;
+    border-right: 0.063rem solid var(--twitter-background);
+    /* min-width: fit-content; */
+    /* min-width: 26rem; */
     overflow-y: scroll;
 }
 
@@ -20,14 +21,37 @@
 
 .feed__header {
     position: sticky;
+    /* position: fixed; */
     top: 0;
     background-color: white;
     z-index: 100;
     border: 1px solid var(--twitter-background);
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
 }
 
 .feed__header>h2 {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
+    /* padding: 15px 20px; */
+    padding-left: 1rem;
+}
+
+.feed__header>div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.feed__header>div>p {
+    display: flex;
+    justify-content: center;
+    width: 20rem;
+    height: 3rem;
+    font-weight: 500;
+}
+
+.feed__header>div>p:hover {
+    background-color: var(--twitter-background);
+    cursor: pointer;
+
 }

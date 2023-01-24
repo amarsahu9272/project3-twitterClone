@@ -1,0 +1,43 @@
+.whoToFollwContainer {
+    margin-top: 0.938rem;
+    margin-left: 1.25rem;
+    padding: 1.25rem;
+    background-color: #f5f8fa;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+}
+.whoToFollwContainer>h2 {
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.follow-p {
+    margin-top: 2rem;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 400;
+    font-size: small;
+    overflow: hidden;
+}
+.follow-p>div:hover{
+background-color: gainsboro;
+cursor: pointer;
+}
+.follow-p>p{
+
+}
+
+.following {
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    color: var(--twitter-color)
+}
