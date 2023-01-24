@@ -15,4 +15,8 @@
     padding: .625rem;
     outline: none;
 }
-
+.selectImage >img{
+width:400px;
+height:250px;
+object-fit: contain;
+}

@@ -2,10 +2,13 @@ import React from "react";
 import TweetBox from "./TweetBox";
 import Post from "./Post";
 import "./Feed.css";
-import { tweetPosts } from "./const";
+// import { tweetPosts } from "./const";
+import {totalTweets} from "./recoil-states";
+import {useRecoilState} from "recoil";
 
 function Feed() {
   // let posts = JSON.parse(localStorage.getItem("tweet")) || [];
+  const [tweetPosts, setTweetPosts] = useRecoilState(totalTweets);
 
   return (
     <div className="feed">

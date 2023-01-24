@@ -28,6 +28,7 @@ const Post = ({ profiledata }) => {
   const setProfileData = useSetRecoilState(profileDataAtom);
 
   const handleProfileClick = () => {
+    console.log(profiledata);
     setProfileData(profiledata);
   };
   const comments = () => {
@@ -44,8 +45,8 @@ const Post = ({ profiledata }) => {
   };
   return (
     <div className="post">
-      <div className="postAvatar">
-        <Avatar onClick={handleProfileClick} src={profilePic} />
+      <div className="postAvatar" onClick={handleProfileClick}>
+        <Avatar src={profilePic} />
       </div>
       <div className="postBody">
         <div className="postHeader">
@@ -62,7 +63,7 @@ const Post = ({ profiledata }) => {
             <p>{tweetText}</p>
           </div>
         </div>
-        <img className="img" src={tweetPic} alt="" />
+       {tweetPic&&<img className="img" src={tweetPic} alt="" />}
         <div className="postFooter">
           <div className="comment">
             <ChatBubbleOutlineIcon

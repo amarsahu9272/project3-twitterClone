@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 // import App from "./App";
 import HomePage from "./pages/home";
+import ProfilePage from "./pages/ProfilePage";
 import SignInPage from "./pages/signin";
 import SignUpPage from "./pages/signup";
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
           {/* <Route path="/" element={<App/>}/> */}
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           {/* <Route path="/dialogbox/DialogBox" element={<DialogBox />} /> */}
         </Routes>
       </RecoilRoot>
